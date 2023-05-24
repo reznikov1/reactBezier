@@ -1,0 +1,122 @@
+:root {
+  --window-background: #161a29;
+  --editor-background: #414f57;
+  --button-text: #ffad1e;
+  --button-text-disabled: #765e35;
+  --button-text-hover: #ffebc8;
+  --scale-text: #91a58a;
+  --grid-thick-line: #2e393e;
+  --grid-thin-line: #39464d;
+  --grid-axis-line: #13181a;
+  --line: #afb592;
+  --point: #ffb56b;
+  --point-selected: #ff4d02;
+  --handler-point: #cfbc9c;
+  --handler-line: #4a81cf;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--window-background);
+}
+.bezier-editor-container {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+* {
+  font-family: "Courier New", Courier, monospace;
+}
+
+text {
+  user-select: none;
+  cursor: default;
+}
+
+.point {
+  cursor: pointer;
+}
+
+.clickable-path {
+  cursor: pointer;
+}
+
+.bezier-editor {
+  position: relative;
+}
+
+.bezier-editor-svg {
+  border-radius: 12px;
+  padding: 3px;
+  border: 1px solid var(--button-text-disabled);
+}
+
+.action-buttons-container {
+  position: absolute;
+  margin: 18px 13px;
+  right: 0;
+  bottom: 0;
+}
+
+.action-button {
+  background-color: transparent;
+  border: 1px solid var(--button-text);
+  border-radius: 5px;
+  color: var(--button-text);
+  height: 35px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.action-button:first-child {
+  margin-right: 7px;
+}
+
+.action-button.disabled {
+  border-color: var(--button-text-disabled);
+  color: var(--button-text-disabled);
+  cursor: default;
+}
+
+.action-button:not(.disabled):hover {
+  border-color: var(--button-text-hover);
+  color: var(--button-text-hover);
+}
+
+.output {
+  display: flex;
+}
+.output .action-button {
+  margin-right: 10px;
+}
+
+.output-text {
+  height: 35px;
+  white-space: pre;
+  overflow: auto;
+  width: 430px;
+  color: var(--button-text);
+}
+
+.output-text::selection {
+  background: var( --editor-background);
+}
+
+/* width */
+::-webkit-scrollbar {
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--button-text);
+  border-radius: 5px;
+}
